@@ -1,5 +1,6 @@
 en:
   title: "Studybook"
+  welcome: "Welcome to my page"
   layouts:
     footer:
       learn_more: "Learn more"
@@ -14,3 +15,12 @@ en:
     home:
       title: "Welcome to Studybook"
       sign_up: "Sign Up Now"
+  users:
+    new:
+      create: "Create my account"
+      name_teacher: "Teacher"
+      title_signup: "Sign Up"
+      confirm: "Confirmation"
+  shared:
+    error_messeges: "The form contains"
+    error: "error"
