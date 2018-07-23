@@ -1,0 +1,17 @@
+vi:
+  title: "Studybook"
+  layouts:
+    footer:
+      learn_more: "Xem thêm"
+      about: "Khái Quát "
+      contact: "Liên Lạc"
+    header:
+      title: "Studybook"
+      home: "Trang Chủ"
+      help: "Trợ Giúp"
+      login: "Đăng Nhập"
+  static_pages:
+    home:
+      title: "Chào mừng bạn đến với Studybook"
+      sign_up: "Đăng Ký"
+

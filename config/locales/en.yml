@@ -1,2 +1,16 @@
 en:
-  hello: "Hello world"
+  title: "Studybook"
+  layouts:
+    footer:
+      learn_more: "Learn more"
+      about: "About"
+      contact: "Contact"
+    header:
+      title: "Studybook"
+      home: "Home"
+      help: "Help"
+      login: "Login"
+  static_pages:
+    home:
+      title: "Welcome to Studybook"
+      sign_up: "Sign Up Now"
