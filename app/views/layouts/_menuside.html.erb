@@ -1,0 +1,7 @@
+<div class="sidenav">
+  <%= link_to t(".about"), "#" %>
+  <% if logged_in? %>
+    <%= link_to t(".lessons"), lessons_path %>
+  <% end %>
+  <%= link_to t(".contact"), "#" %>
+</div>

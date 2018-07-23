@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :histories, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :lessons, dependent: :destroy
   has_many :follower_relations, class_name: UserRelation.name,
     foreign_key: "follower_id",
     dependent: :destroy
