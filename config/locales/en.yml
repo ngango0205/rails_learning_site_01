@@ -1,2 +1,16 @@
 en:
-  hello: "Hello world"
+  title: "Learning Site"
+  layouts:
+    footer:
+      learn_more: "Learn more"
+      about: "About"
+      contact: "Contact"
+    header:
+      title: "Learning Site"
+      home: "Home"
+      help: "Help"
+      login: "Login"
+  static_pages:
+    home:
+      title: "Welcome to Learning Site Page"
+      sign_up: "Sign Up Now"
