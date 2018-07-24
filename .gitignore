@@ -34,3 +34,6 @@
 /config/credentials.yml.enc
 /config/secrets.yml
 
+
+# Ignore application configuration
+/config/application.yml
