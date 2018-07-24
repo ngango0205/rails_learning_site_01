@@ -1,6 +1,7 @@
 en:
   title: "Studybook"
   welcome: "Welcome to my page"
+  invalid_session: "Invalid email/password combination"
   layouts:
     footer:
       learn_more: "Learn more"
@@ -24,3 +25,9 @@ en:
   shared:
     error_messeges: "The form contains"
     error: "error"
+  sessions:
+    new:
+      login: "Log In"
+      sign_up: "Sign Up Now"
+      ques: "New User?"
+      logout: "Logout"
