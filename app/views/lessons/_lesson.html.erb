@@ -1,0 +1,8 @@
+<div class="post-lesson">
+  <div class="user-info-mini">
+    <%= gravatar_for lesson.user, size = Settings.image.small_size %>
+    <h5><%= lesson.user.name %></h5>
+    <h6><%= lesson.created_at.strftime "%D %H:%M" %></h6>
+  </div>
+  <p><%= lesson.content %></p>
+</div>

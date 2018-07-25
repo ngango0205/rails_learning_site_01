@@ -1,7 +1,15 @@
 en:
   title: "Studybook"
+  copyright: "© 2018 Copyright: "
   welcome: "Welcome to my page"
   invalid_session: "Invalid email/password combination"
+  create_lesson_fail: "Sign up failed. Please try again!"
+  show_lesson_fail: "Show lesson failed. Please try again!"
+  info: "Information"
+  contact: "Contact"
+  email: "Email: studybook@gmail.com"
+  facebook: "FB: https://facebook.com/studybook"
+  phone: "Phone: 0942298558"
   layouts:
     footer:
       learn_more: "Learn more"
@@ -12,6 +20,10 @@ en:
       home: "Home"
       help: "Help"
       login: "Login"
+    menuside:
+      about: "About"
+      lessons: "Lessons"
+      contact: "Contact"
   static_pages:
     home:
       title: "Welcome to Studybook"
@@ -23,11 +35,20 @@ en:
       title_signup: "Sign Up"
       confirm: "Confirmation"
   shared:
-    error_messeges: "The form contains"
-    error: "error"
+    error_messages:
+      error_message: "The form contains"
+      error: "error"
   sessions:
     new:
       login: "Log In"
       sign_up: "Sign Up Now"
       ques: "New User?"
       logout: "Logout"
+  lessons:
+    show:
+      title: "Show lesson"
+    new:
+      title: "New lesson"
+      create_lesson: "Create lesson"
+    index:
+      title: "All lessons"

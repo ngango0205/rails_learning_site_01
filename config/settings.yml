@@ -3,3 +3,8 @@ maximum:
   length_email: 255
 minimum:
   length_pass: 6
+image:
+  big_size: 80
+  small_size: 40
+page:
+  child_in_page: 5
