@@ -20,6 +20,7 @@ en:
       home: "Home"
       help: "Help"
       login: "Login"
+      search: "Search"
     menuside:
       about: "About"
       lessons: "Lessons"
@@ -34,6 +35,7 @@ en:
       name_teacher: "Teacher"
       title_signup: "Sign Up"
       confirm: "Confirmation"
+      name_student: "Student"
   shared:
     error_messages:
       error_message: "The form contains"
@@ -52,3 +54,7 @@ en:
       create_lesson: "Create lesson"
     index:
       title: "All lessons"
+    search:
+      lessons: "Lessons"
+      des: "Description"
+      search_1: "Search"
