@@ -25,6 +25,11 @@ class LessonsController < ApplicationController
     redirect_to lessons_path
   end
 
+  def search
+    @search = Lesson.where("name LIKE ?", "%#{params[:search]}%")
+      .page(params[:page]).per Settings.page.child_in_page
+  end
+
   private
 
   def lesson_params

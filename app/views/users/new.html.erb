@@ -17,11 +17,12 @@
       <%= f.label :password_confirmation, t(".confirm") %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.label :role, class: "checkbox inline" do %>
-      <%= f.check_box :role %>
+      <%= f.label :role, class: "radio inline" do %>
+      <%= f.radio_button :role, checked: 1 %>
       <span><%= t ".name_teacher" %></span>
+      <%= f.radio_button :role, checked: 0 %>
+      <span><%= t ".name_student" %></span>
       <% end %>
-
       <%= f.submit t(".create"), class: "btn btn-primary" %>
     <% end %>
   </div>

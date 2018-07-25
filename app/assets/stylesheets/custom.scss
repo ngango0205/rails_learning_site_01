@@ -187,6 +187,12 @@ input {
   height: auto !important;
 }
 
+input_search {
+  border: 1px solid $colour_bbb;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
 #error_explanation {
   color: red;
   ul {
@@ -201,12 +207,15 @@ input {
     color: $state-danger-text;
   }
 }
-
-.checkbox {
+.radio{
   margin-top: -10px;
   margin-bottom: 10px;
   span {
     margin-left: 0;
     font-weight: bold;
   }
+}
+
+.seach {
+  display: inline-block;
 }
