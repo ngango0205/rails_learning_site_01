@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   get "/search", to: "lessons#search"
 
   resources :users
-  resources :lessons
+
+  resources :lessons do
+    resources :comments
+  end
 end

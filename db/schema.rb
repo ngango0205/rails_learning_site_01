@@ -20,11 +20,12 @@ ActiveRecord::Schema.define(version: 2018_07_23_064424) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "lesson_id"
+    t.bigint "lesson_id"
     t.text "content"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_comments_on_lesson_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 2018_07_23_064424) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "comments", "lessons"
   add_foreign_key "comments", "users"
   add_foreign_key "lessons", "users"
 end

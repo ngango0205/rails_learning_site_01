@@ -6,5 +6,6 @@ minimum:
 image:
   big_size: 80
   small_size: 40
+  comment_size: 25
 page:
   child_in_page: 5

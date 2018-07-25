@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
   def index
     @lessons = current_user.lessons.page(params[:page])
-      .per Settings.page.child_in_page
+                           .per Settings.page.child_in_page
   end
 
   def new
@@ -27,7 +27,7 @@ class LessonsController < ApplicationController
 
   def search
     @search = Lesson.where("name LIKE ?", "%#{params[:search]}%")
-      .page(params[:page]).per Settings.page.child_in_page
+                    .page(params[:page]).per Settings.page.child_in_page
   end
 
   private

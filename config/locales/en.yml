@@ -4,6 +4,7 @@ en:
   welcome: "Welcome to my page"
   invalid_session: "Invalid email/password combination"
   create_lesson_fail: "Sign up failed. Please try again!"
+  create_comment_fail: "Comment failed. Please try again!"
   show_lesson_fail: "Show lesson failed. Please try again!"
   info: "Information"
   contact: "Contact"
@@ -58,3 +59,5 @@ en:
       lessons: "Lessons"
       des: "Description"
       search_1: "Search"
+    lesson:
+      comment: "Comment ..."
