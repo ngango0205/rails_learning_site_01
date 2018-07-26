@@ -15,12 +15,19 @@
       <% end %>
     </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t(".home"), root_path, class: "menu-button" %></li>
-        <li><%= link_to t(".help"), help_path, class: "menu-button" %></li>
         <% if logged_in? %>
-          <li><%= link_to t(".logout"), logout_path,
-            {class: "menu-button", method: :delete} %></li>
+          <li><%= link_to "#", class: "menu-button" do %>
+            <i class="material-icons">notifications</i>
+          <% end %></li>
+          <li><%= link_to root_path, class: "menu-button" do %>
+            <i class="material-icons">home</i>
+          <% end %></li>
+          <li><%= link_to logout_path,
+            {class: "menu-button", method: :delete} do %>
+            <i class="material-icons">input</i>
+          <% end %></li>
         <% else %>
+          <li><%= link_to t(".help"), help_path, class: "menu-button" %></li>
           <li><%= link_to t(".login"), login_path, class: "menu-button" %></li>
         <% end %>
       </ul>

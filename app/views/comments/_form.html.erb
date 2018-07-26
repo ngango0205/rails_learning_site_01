@@ -1,0 +1,15 @@
+<div class="user-info-mini row">
+  <%= form_for [object, object.comments.new], remote: true do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :lesson_id, value: object.id %>
+    <div class="input-group">
+      <%= f.text_field :content, {class: "form-control",
+        id: "message_#{object.id}"} %>
+      <span class="input-group-btn">
+        <button class="btn btn-outline-secondary" type="submit" >
+          <i class="glyphicon glyphicon-send"></i>
+        </button>
+      </span>
+    </div>
+  <% end %>
+</div>
