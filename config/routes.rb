@@ -9,9 +9,15 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/search", to: "lessons#search"
 
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   resources :lessons do
     resources :comments
   end
+
+  resources :user_relations, only: [:create, :destroy]
 end

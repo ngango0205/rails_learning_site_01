@@ -11,6 +11,8 @@ en:
   email: "Email: studybook@gmail.com"
   facebook: "FB: https://facebook.com/studybook"
   phone: "Phone: 0942298558"
+  followning: "following"
+  follower: "follower"
   layouts:
     footer:
       learn_more: "Learn more"
@@ -37,6 +39,10 @@ en:
       title_signup: "Sign Up"
       confirm: "Confirmation"
       name_student: "Student"
+    follow:
+      follow_submit: "Follow"
+    unfollow:
+      unfo_submit: "Unfollow"
   shared:
     error_messages:
       error_message: "The form contains"

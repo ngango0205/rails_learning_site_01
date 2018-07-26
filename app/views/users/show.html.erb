@@ -1,1 +1,15 @@
-<%= @user.name %>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section class="counts">
+      <%= render "shared/count" %>
+    </section>
+    <%  if logged_in? %>
+    <%= render "follow_form" %>
+    <% end %>
+</div>
