@@ -1,2 +1,2 @@
-$(document).on 'turbolinks:load', ->
-  $("filter-autocomplete-search").easyAutocomplete(options)
+$("#search_result").html(
+  "<%= escape_javascript(render "lessons/search_result", search_results: @search) %>");

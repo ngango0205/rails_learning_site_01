@@ -214,11 +214,18 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  margin-top: 5px;
+}
+
+.search{
+  margin-top: 12px;
 }
 
 #logo:hover {
   color: $black;
   text-decoration: none;
+  margin-top: 5px;
+
 }
 
 header ul li {
