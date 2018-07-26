@@ -309,3 +309,17 @@ input_search {
 .seach {
   display: inline-block;
 }
+
+.counts {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+}
