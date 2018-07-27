@@ -1,7 +1,11 @@
 <%= provide :title, t(".title") %>
-<% @lessons.each do |lesson| %>
-  <div class="lesson">
-    <%= render "lessons/lesson", lesson: lesson %>
-  </div>
+<% if @lessons.size == 0 %>
+  <p class="center"><%= t ".not_follow_anyone" %></p>
+<% else %>
+  <% @lessons.each do |lesson| %>
+    <div class="lesson">
+      <%= render "lessons/lesson", lesson: lesson %>
+    </div>
+  <% end %>
+  <% paginate @lessons %>
 <% end %>
-<% paginate @lessons %>

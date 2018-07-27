@@ -8,12 +8,19 @@
     <%= javascript_include_tag "application",
       "data-turbolinks-track": "reload" %>
   </head>
-  <body id="main">
-    <%= render "layouts/header" %>
-    <%= render "layouts/menuside" %>
-    <div id="main-content">
+  <% if current_user.nil? %>
+    <body id="home-page">
+      <%= render "layouts/header" %>
       <%= yield %>
-      <%= render "layouts/footer" %>
-    </div>
-  </body>
+    </body>
+  <% else %>
+    <body id="main">
+      <%= render "layouts/header" %>
+      <%= render "layouts/menuside" %>
+      <div id="main-content">
+        <%= yield %>
+        <%= render "layouts/footer" %>
+      </div>
+    </body>
+  <% end %>
 </html>

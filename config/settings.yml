@@ -4,9 +4,10 @@ maximum:
 minimum:
   length_pass: 6
 image:
-  big_size: 80
+  big_size: 120
   small_size: 40
   comment_size: 25
+  icon_size: 20
 page:
   child_in_page: 5
 notify:

@@ -14,7 +14,7 @@ class NotificationsController < ApplicationController
                 @notification.notifiable.lesson
               end
     @notification.update_attribute(:read_at, Time.zone.now) unless @notification
-                                                                  .read_at.nil?
+                                                                   .read_at.nil?
     redirect_to @lesson
   end
 

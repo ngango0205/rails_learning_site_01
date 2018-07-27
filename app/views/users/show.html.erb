@@ -1,23 +1,24 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
+<div class="user-infomation">
+  <div class="user-cover">
     <% if current_user? @user %>
-    <section>
-      <h1>
-        <%= link_to @user.name, edit_user_path(@user.id) %>
-      </h1>
-    </section>
+      <div>
+        <%= gravatar_for @user %>
+        <h1><%= link_to @user.name, edit_user_path(@user.id) %></h1>
+      </div>
     <% else %>
-    <section>
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
+      <div>
+        <%= gravatar_for @user %>
+        <h1><%= @user.name %></h1>
+      </div>
     <% end %>
-    <section class="counts">
+  </div>
+  <div class="counts">
       <%= render "shared/count" %>
-    </section>
+  </div>
+  <div class="follow-btn">
     <%  if logged_in? %>
-    <%= render "follow_form" %>
+      <%= render "follow_form" %>
     <% end %>
+  </div>
 </div>

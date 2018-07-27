@@ -1,0 +1,5 @@
+<% current_user.following.each do |user| %>
+  <div class="post">
+    <%= render "users/user", object: user %>
+  </div>
+<% end %>

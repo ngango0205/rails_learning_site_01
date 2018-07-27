@@ -9,6 +9,6 @@ class Lesson < ApplicationRecord
   validates :description, presence: true
   validates :content, presence: true
   has_many :likes
-  scope :search, ->q{where "name LIKE '%#{q}%'"}
+  scope :search, ->(q){where "name LIKE '%#{q}%'"}
   scope :order_by_name, ->{order name: :asc}
 end
