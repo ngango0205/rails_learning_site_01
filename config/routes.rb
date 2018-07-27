@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :lessons do
     resources :comments
+    resource :like, module: :lessons
   end
 
   resources :user_relations, only: [:create, :destroy]

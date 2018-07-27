@@ -9,4 +9,5 @@ class Lesson < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :content, presence: true
+  has_many :likes
 end

@@ -5,11 +5,17 @@
     <h6><%= lesson.created_at.strftime "%D %H:%M" %></h6>
     <p><%= lesson.content %></p>
   </div>
-  <hr>
+
   <div class="btn-group">
-    <div>
-      <%= button_to "#" do %>
-        <span><i class="material-icons">thumb_up_alt</i></span>
+    <div id = "lesson_likes">
+      <% if logged_in? && current_user.likes?(lesson) %>
+        <%= button_to lesson_like_path(lesson), method: :delete do %>
+          <span><i class="material-icons">thumb_up_alt</i>(<%= lesson.likes.count %>)</span>
+        <% end %>
+      <% else %>
+        <%= button_to  lesson_like_path(lesson), method: :post do %>
+          <span><i class="material-icons">thumb_up_alt</i>(<%= lesson.likes.count %>)</span>
+        <% end %>
       <% end %>
     </div>
     <div>
@@ -18,7 +24,7 @@
       </button>
     </div>
     <div>
-      <%= button_to "" do %>
+      <%= button_to "https://www.facebook.com/share" do %>
         <span><i class="material-icons" >share</i></span>
       <% end %>
     </div>
