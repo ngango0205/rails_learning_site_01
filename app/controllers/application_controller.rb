@@ -5,9 +5,11 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
-  def create_notification recipient, notifiable
-    Notification.create(actor: current_user, recipient: recipient,
-      action: t("post"), notifiable: notifiable).send_notification_email
+  def create_notifications recipients, notifiable
+    recipients.each do |recipient|
+      Notification.create(actor: current_user, recipient: recipient,
+        action: t("post"), notifiable: notifiable).send_notification_email
+    end
   end
   private
 

@@ -28,10 +28,10 @@ gem "mini_magick", "4.7.0"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rubocop", "~> 0.54.0", require: false
+  gem "listen", ">= 3.0.5", "< 3.2"
 end
 
 group :development do
-  gem "listen", ">= 3.0.5", "< 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"

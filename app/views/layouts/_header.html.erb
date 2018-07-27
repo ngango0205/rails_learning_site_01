@@ -30,15 +30,14 @@
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
         <li class="dropdown">
-            <%= link_to "#",
-              class: "menu-button notifies-btn" do %>
-              <i class="material-icons">notifications</i>
-              <div class="notifications-count">
-                  <%= current_user.notifications.count %>
-              </div>
-            <% end %>
-            <div class="dropdown-content">
-              <% current_user.notifications.first(Settings.notify.max_notify_show).each do |notification| %>
+          <div class="menu-button" id="btn-notify">
+            <i class="material-icons">notifications</i>
+            <div id="notifications-count">
+              <%= current_user.notifications.count %>
+            </div>
+          </div>
+            <div class="dropdown-content" id="dropdown-content">
+              <% current_user.notifications.last(Settings.notify.max_notify_show).reverse.each do |notification| %>
                 <div>
                   <%= render "notifications/header_notification",
                     notification: notification %>
@@ -62,4 +61,5 @@
       </ul>
     </nav>
   </div>
+  <script>toggleBtnNotification()</script>
 </header>

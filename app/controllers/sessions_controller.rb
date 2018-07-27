@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by email: params[:session][:email].downcase
     if user &.authenticate params[:session][:password]
       log_in user
+      cookies.permanent.signed[:user_id] = user.id
       redirect_to user_home_url
     else
       flash.now[:danger] = t ".invalid_session"

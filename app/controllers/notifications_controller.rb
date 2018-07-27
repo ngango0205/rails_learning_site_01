@@ -18,6 +18,12 @@ class NotificationsController < ApplicationController
     redirect_to @lesson
   end
 
+  def refresh_part
+    respond_to do |format|
+      format.js {render action: "refresh_part.js"}
+    end
+  end
+
   private
 
   def find_notification

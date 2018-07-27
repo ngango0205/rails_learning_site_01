@@ -11,7 +11,10 @@ class StaticPagesController < ApplicationController
 
   def user_home
     return unless logged_in?
-    @followed = current_user.following.map &:lessons
+    @followed = Array.new
+    current_user.following.each do |user|
+      @followed += user.lessons
+    end
     @followed_lessons = @followed.uniq.sort_by &:created_at
   end
 end

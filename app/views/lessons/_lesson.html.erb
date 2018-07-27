@@ -38,7 +38,7 @@
     </div>
   </div>
   <hr>
-  <div class="all_comment">
+  <div id="all-comment">
     <%= link_to (t(".all") + " #{lesson.comments.count} " + t(".comments")), lesson_comments_path(lesson.id) %>
   </div>
   <div id="form-lesson">

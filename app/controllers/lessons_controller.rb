@@ -1,4 +1,6 @@
 class LessonsController < ApplicationController
+  before_action :logged_in_user, only: [:create]
+
   def index
     @lessons = current_user.lessons.page(params[:page])
                            .per Settings.page.child_in_page
@@ -13,7 +15,7 @@ class LessonsController < ApplicationController
     @lesson = current_user.lessons.build lesson_params
     if @lesson.save
       @lesson.user.followers.each do |user|
-        create_notification user, @lesson
+        create_notifications user.followers, @lesson
       end
       redirect_to @lesson
     else

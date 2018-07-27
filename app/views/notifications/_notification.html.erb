@@ -2,4 +2,5 @@
   <%= gravatar_for notification.actor, size = Settings.image.comment_size %>
   <h4><%= notification.actor.name %></h4>
   <%= notification.action %> <%= notification.notifiable_type %>
+  <%= notification.created_at %>
 </div>
