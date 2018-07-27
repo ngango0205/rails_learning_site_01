@@ -13,6 +13,8 @@ en:
   phone: "Phone: 0942298558"
   followning: "following"
   follower: "follower"
+  notification: "Notification"
+  post: "post new"
   layouts:
     footer:
       learn_more: "Learn more"
@@ -67,3 +69,8 @@ en:
       search_1: "Search"
     lesson:
       comment: "Comment ..."
+  user_mailer:
+    notify:
+      title: "Notification"
+      content_1: "Hi"
+      content_2: "You have new notification"

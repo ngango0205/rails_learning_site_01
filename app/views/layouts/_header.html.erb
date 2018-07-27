@@ -16,7 +16,8 @@
     </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to "#", class: "menu-button" do %>
+          <li><%= link_to user_notifications_path(current_user),
+            class: "menu-button" do %>
             <i class="material-icons">notifications</i>
           <% end %></li>
           <li><%= link_to root_path, class: "menu-button" do %>

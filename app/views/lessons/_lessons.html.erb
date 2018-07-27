@@ -1,7 +1,5 @@
-<%= provide :title, t(".title") %>
-<% @lessons.each do |lesson| %>
+<% object.each do |lesson| %>
   <div class="lesson">
     <%= render "lessons/lesson", lesson: lesson %>
   </div>
 <% end %>
-<% paginate @lessons %>
