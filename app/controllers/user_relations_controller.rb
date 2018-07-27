@@ -1,5 +1,5 @@
 class UserRelationsController < ApplicationController
-   def create
+  def create
     user = User.find_by id: params[:followed_id]
     current_user.follow user
     redirect_to user

@@ -11,6 +11,9 @@ class LessonsController < ApplicationController
   def create
     @lesson = current_user.lessons.build lesson_params
     if @lesson.save
+      @lesson.user.followers.each do |user|
+        create_notification user, @lesson
+      end
       redirect_to @lesson
     else
       flash.now[:danger] = t "create_lesson_fail"

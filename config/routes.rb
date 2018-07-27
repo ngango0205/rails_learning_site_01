@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/search", to: "lessons#search"
 
   resources :users do
+    resources :notifications, only: :index
     member do
       get :following, :followers
     end

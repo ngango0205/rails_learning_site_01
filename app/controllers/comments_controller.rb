@@ -6,11 +6,11 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.new comment_params
     if @comment.save
-      redirect_to @comment.lesson
+      create_notification @comment.lesson.user, @comment
     else
       flash[:danger] = t "create_comment_fail"
-      redirect_to current_user
     end
+    redirect_to @comment.lesson
   end
 
   private
