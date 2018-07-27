@@ -29,10 +29,25 @@
     </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to user_notifications_path(current_user),
-            class: "menu-button" do %>
-            <i class="material-icons">notifications</i>
-          <% end %></li>
+        <li class="dropdown">
+            <%= link_to user_notifications_path(current_user),
+              class: "menu-button" do %>
+              <i class="material-icons">notifications</i>
+              <div class="notifications-count">
+                  <%= current_user.notifications.count %>
+              </div>
+            <% end %>
+            <div class="dropdown-content">
+              <% current_user.notifications.first(Settings.notify.max_notify_show).each do |notification| %>
+                <div>
+                  <%= render "notifications/header_notification",
+                    notification: notification %>
+                </div>
+              <% end %>
+              <div><%= link_to t(".all_notify"), notifications_path, class: "all-notify-header" %>
+              </div>
+            </div>
+        </li>
           <li><%= link_to root_path, class: "menu-button" do %>
             <i class="material-icons">home</i>
           <% end %></li>

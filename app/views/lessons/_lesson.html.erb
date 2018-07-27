@@ -21,6 +21,11 @@
     </div>
   </div>
   <hr>
-  <%= render "comments/comments", object: lesson %>
+  <div class="all_comment">
+    <%= link_to (t(".all") + " #{lesson.comments.count} " + t(".comments")), lesson_comments_path(lesson.id) %>
+  </div>
+  <div id="form-lesson">
+    <%= render "comments/comments", object: lesson %>
+  </div>
   <%= render "comments/form", object: lesson %>
 </div>

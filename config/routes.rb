@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/search", to: "lessons#search", as: "search"
+  get "/notifications", to: "notifications#update_seen"
 
   resources :users do
-    resources :notifications, only: :index
+    resources :notifications, only: [:index, :update, :destroy]
     member do
       get :following, :followers
     end

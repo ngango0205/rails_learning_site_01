@@ -1,0 +1,31 @@
+<div class="post-lesson">
+  <div class="user-info-mini">
+    <%= gravatar_for @lesson.user, size = Settings.image.small_size %>
+    <h3 class="user-name"><%= @lesson.user.name %></h4>
+    <h6><%= @lesson.created_at.strftime "%D %H:%M" %></h6>
+    <p><%= @lesson.content %></p>
+  </div>
+  <hr>
+  <div class="btn-group">
+    <div>
+      <%= button_to "#" do %>
+        <span><i class="material-icons">thumb_up_alt</i></span>
+      <% end %>
+    </div>
+    <div>
+      <button onclick="getFocus(<%= @lesson.id %>)">
+        <span><i class="material-icons">comment</i></span>
+      </button>
+    </div>
+    <div>
+      <%= button_to "" do %>
+        <span><i class="material-icons" >share</i></span>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+  <div id="form-lesson">
+    <%= render "comments/all_comments", object: @lesson %>
+  </div>
+  <%= render "comments/form", object: @lesson %>
+</div>

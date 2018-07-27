@@ -9,3 +9,7 @@ image:
   comment_size: 25
 page:
   child_in_page: 5
+notify:
+  max_notify_show: 5
+comment:
+  comment_show: 2

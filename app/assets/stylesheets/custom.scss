@@ -2,6 +2,47 @@
 @import "bootstrap";
 @import "colour";
 
+.notification {
+  color: $black;
+  width: 100%;
+  float: left;
+  background: $white;
+}
+
+.notification_seen {
+  color: $black;
+  width: 100%;
+  float: left;
+  background: $dark_blue;
+}
+
+.all-notify-header {
+  background: $dark_blue;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: $colour_f9;
+  min-width: 400px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  display: block;
+  border: 0.5px solid $gray-lighter;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown-content div:hover {background-color: $main_background;}
+
 .comment {
   border-radius: 15px;
   background: $main_background;
@@ -11,6 +52,25 @@
   float: left;
   clear: both;
 }
+
+.all_comment {
+  margin: 0 15px 10px ;
+}
+
+.notifications-count
+  {
+    border-radius: 50%;
+    background: $red;
+    color: $white;
+    font-size: .75em;
+    height: 16px;
+    line-height: 1.75em;
+    position: absolute;
+    right: 2px;
+    text-align: center;
+    top: 2px;
+    width: 16px;
+  }
 
 .user-name {
   font-weight: bold;
@@ -39,7 +99,7 @@
 }
 
 .sidenav a:hover {
-  color: $colour_f1;
+  color: $main_background;
 }
 
 .post-lesson {
@@ -61,7 +121,7 @@
   background: $main_background;
 }
 
-.menu-button {
+.menu-button:hover {
   color: $black !important;
 }
 

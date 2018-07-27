@@ -28,6 +28,7 @@ en:
       help: "Help"
       login: "Login"
       search: "Search"
+      all_notify: "All notification"
     menuside:
       about: "About"
       lessons: "Lessons"
@@ -74,6 +75,8 @@ en:
       search_1: "Search"
     lesson:
       comment: "Comment ..."
+      all: "All"
+      comments: "comments"
   user_mailer:
     notify:
       title: "Notification"
