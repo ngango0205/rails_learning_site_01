@@ -3,12 +3,18 @@ class Lessons::LikesController < ApplicationController
 
   def create
     @lesson.likes.where(user_id: current_user.id).first_or_create
-    redirect_to @lesson
+    respond_to do |format|
+      format.html {redirect_to @lesson}
+      format.js
+    end
   end
 
   def destroy
     @lesson.likes.where(user_id: current_user.id).destroy_all
-    redirect_to @lesson
+    respond_to do |format|
+      format.html {redirect_to @lesson}
+      format.js
+    end
   end
 
   private

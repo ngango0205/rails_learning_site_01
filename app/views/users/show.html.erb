@@ -1,11 +1,19 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="col-md-4">
+    <% if current_user? @user %>
+    <section>
+      <h1>
+        <%= link_to @user.name, edit_user_path(@user.id) %>
+      </h1>
+    </section>
+    <% else %>
     <section>
       <h1>
         <%= @user.name %>
       </h1>
     </section>
+    <% end %>
     <section class="counts">
       <%= render "shared/count" %>
     </section>

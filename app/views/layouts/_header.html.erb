@@ -2,16 +2,29 @@
   <div class="container">
     <%= link_to t(".title"), root_path, id: "logo" %>
     <nav>
-    <ul class="navbar-nav mr-auto">
-      <%= form_tag search_path, method: :get, class: "form-inline my-2 my-lg-0" do %>
+    <ul class="navbar-nav search">
+      <% if request.original_url.include? search_url %>
+        <%= form_tag search_path, method: :get, class: "form-inline my-2 my-lg-0", remote: true do %>
         <div class="input-group">
-          <%= text_field_tag :search, nil, placeholder: t(".search"), class: "form-control" %>
+          <%= text_field_tag :term, params["term"], placeholder: t(".search"), class: "form-control", id: "search-autocomplete" %>
           <span class="input-group-btn">
             <button class="btn btn-outline-secondary" type="submit">
               <i class="glyphicon glyphicon-search"></i>
             </button>
           </span>
         </div>
+        <% end %>
+      <% else %>
+         <%= form_tag search_path, method: :get, class: "form-inline my-2 my-lg-0" do %>
+         <div class="input-group">
+          <%= text_field_tag :term, params["term"], placeholder: t(".search"), class: "form-control", id: "search-autocomplete" %>
+          <span class="input-group-btn">
+            <button class="btn btn-outline-secondary" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </span>
+        </div>
+        <% end %>
       <% end %>
     </ul>
       <ul class="nav navbar-nav navbar-right">
