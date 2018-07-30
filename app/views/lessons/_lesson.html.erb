@@ -5,18 +5,9 @@
     <h6><%= lesson.created_at.strftime "%D %H:%M" %></h6>
     <p><%= lesson.content %></p>
   </div>
-
   <div class="btn-group">
     <div id = "lesson_likes">
-      <% if logged_in? && current_user.likes?(lesson) %>
-        <%= button_to lesson_like_path(lesson), method: :delete do %>
-          <span><i class="material-icons">thumb_up_alt</i>(<%= lesson.likes.count %>)</span>
-        <% end %>
-      <% else %>
-        <%= button_to  lesson_like_path(lesson), method: :post do %>
-          <span><i class="material-icons">thumb_up_alt</i>(<%= lesson.likes.count %>)</span>
-        <% end %>
-      <% end %>
+    <%= render "lessons/likes", lesson: lesson %>
     </div>
     <div>
       <button onclick="getFocus(<%= lesson.id %>)">
