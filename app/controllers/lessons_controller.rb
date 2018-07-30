@@ -29,8 +29,14 @@ class LessonsController < ApplicationController
   end
 
   def search
-    @search = Lesson.where("name LIKE ?", "%#{params[:search]}%")
+    @search = Lesson.search(params[:term]).order_by_name
                     .page(params[:page]).per Settings.page.child_in_page
+    if request.referrer.include? search_url
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    end
   end
 
   private

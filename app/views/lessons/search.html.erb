@@ -1,31 +1,23 @@
-<div class="static-page container">
-  <div class="trainers-page">
-    <div class="card z-depth-1 border-0">
-      <div class="card-body">
-        <div class="card-title">
-          <h1 class="page-header">Lessions
-            <small><%= t ".search_1" %></small>
-          </h1>
-        </div>
-        <div class="card-body p-0">
-          <table class="table table-responsive-md table-striped table-hover">
-            <thead class="thead-light">
-              <tr align="center">
-                <td><h5><b><%= t ".lessions" %></b></h5></td>
-                <td><h5><b><%= t ".description" %></b></h5></td>
-              </tr>
-            </thead>
-            <tbody>
-              <% @search.each do |lession| %>
-                <tr class="odd gradeX" align="center">
-                  <td><%= lession.name %></td>
-                  <td><%= lession.description %></td>
-                </tr>
-              <% end %>
-              <%= paginate @search %>
-            </tbody>
-          </table>
-        </div>
+<div class="lessions-page">
+  <div class="card z-depth-1 border-0">
+    <div class="card-body">
+      <div class="card-title">
+      <h1 class="page-header">Lessions
+          <small><%= t ".search_1" %></small>
+        </h1>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-responsive-md table-striped table-hover">
+          <thead class="thead-light">
+            <tr align="center">
+              <td><h5><b><%= t ".lessions" %></b></h5></td>
+              <td><h5><b><%= t ".description" %></b></h5></td>
+            </tr>
+          </thead>
+          <tbody  id="search_result">
+              <%= render "search_result", search_results: @search %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
