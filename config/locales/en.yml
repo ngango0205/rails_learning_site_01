@@ -15,6 +15,7 @@ en:
   follower: "follower"
   notification: "Notification"
   post: "post new"
+  find_lesson: "Not find lesson"
   layouts:
     footer:
       learn_more: "Learn more"

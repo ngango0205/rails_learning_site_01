@@ -11,6 +11,7 @@ class User < ApplicationRecord
     dependent:   :destroy
   has_many :following, through: :follower_relations, source: :followed
   has_many :followers, through: :followed_relations, source: :follower
+  has_many :likes
 
   before_save :downcase_email
   validates :name,  presence: true,
@@ -34,6 +35,10 @@ class User < ApplicationRecord
 
   def following? other_user
     following.include? other_user
+  end
+
+  def likes? lesson
+    lesson.likes.where(user_id: id).any?
   end
 
   private
