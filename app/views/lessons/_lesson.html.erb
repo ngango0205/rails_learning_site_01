@@ -5,28 +5,24 @@
     <h6><%= lesson.created_at.strftime "%D %H:%M" %></h6>
     <p><%= lesson.content %></p>
   </div>
-
   <div class="btn-group">
     <div id = "lesson_likes">
-      <% if logged_in? && current_user.likes?(lesson) %>
-        <%= button_to lesson_like_path(lesson), method: :delete do %>
-          <span><i class="material-icons">thumb_up_alt</i>(<%= lesson.likes.count %>)</span>
-        <% end %>
-      <% else %>
-        <%= button_to  lesson_like_path(lesson), method: :post do %>
-          <span><i class="material-icons">thumb_up_alt</i>(<%= lesson.likes.count %>)</span>
-        <% end %>
-      <% end %>
+    <%= render "lessons/likes", lesson: lesson %>
     </div>
     <div>
       <button onclick="getFocus(<%= lesson.id %>)">
         <span><i class="material-icons">comment</i></span>
       </button>
     </div>
-    <div>
-      <%= button_to "https://www.facebook.com/share" do %>
+    <div class="dropdown_share">
+      <button class = "dropbtn" >
         <span><i class="material-icons" >share</i></span>
-      <% end %>
+      </button>
+      <div class="dropdown_share-content">
+         <%= social_share_button_tag(lesson.name, :allow_sites => %w(twitter)) %>
+         <%= social_share_button_tag(lesson.name, :allow_sites => %w(facebook)) %>
+         <%= social_share_button_tag(lesson.name, :allow_sites => %w(google_plus)) %>
+      </div>
     </div>
   </div>
   <hr>

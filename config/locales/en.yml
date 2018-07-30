@@ -6,6 +6,7 @@ en:
   create_lesson_fail: "Sign up failed. Please try again!"
   create_comment_fail: "Comment failed. Please try again!"
   show_lesson_fail: "Show lesson failed. Please try again!"
+  create_category_fail: "Create failed. Please try again!"
   info: "Information"
   contact: "Contact"
   email: "Email: studybook@gmail.com"
@@ -79,3 +80,8 @@ en:
       title: "Notification"
       content_1: "Hi"
       content_2: "You have new notification"
+  categories:
+    new:
+      title: "categorys"
+      create_category: "Creates"
+

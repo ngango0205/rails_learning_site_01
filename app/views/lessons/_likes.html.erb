@@ -1,0 +1,9 @@
+<% if logged_in? && current_user.likes?(lesson) %>
+  <%= button_to lesson_like_path(lesson), method: :delete, remote: true do %>
+    <span><i class="material-icons like">thumb_up_alt</i>(<%= lesson.likes.count %>)</span>
+  <% end %>
+<% else %>
+  <%= button_to  lesson_like_path(lesson), method: :post, remote: true do %>
+    <span><i class="material-icons">thumb_up_alt</i>(<%= lesson.likes.count %>)</span>
+  <% end %>
+<% end %>

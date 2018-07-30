@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
   end
 
   def new
+    @all_category = Category.all
     @lesson = Lesson.new
   end
 
@@ -42,6 +43,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit :name, :description, :content
+    params.require(:lesson).permit :name, :description, :content, :category_id
   end
 end

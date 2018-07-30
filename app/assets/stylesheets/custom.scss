@@ -132,7 +132,6 @@
   width: 33.33%;
   height: 100%;
   align-items: center;
-  display: inline-block;
 }
 
 .btn-group {
@@ -329,4 +328,34 @@ input_search {
       color: blue;
     }
   }
+}
+.like{
+  color: blue;
+}
+
+.dropbtn {
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown_share {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_share-content {
+    display: none;
+    position: absolute;
+    right: 85px;
+    z-index: 1;
+}
+
+.dropdown_share:hover .dropdown_share-content {
+    display: block;
+}
+
+.dropdown_share:hover .dropbtn {
+    background-color: $main_background;
 }
