@@ -1,0 +1,7 @@
+<div class="comment">
+  <div class="user-info-mini">
+    <%= gravatar_for comment.user, size = Settings.image.comment_size %>
+    <h4 class="user-name"><%= comment.user.name %></h4>
+    <%= comment.content %>
+  </div>
+</div>

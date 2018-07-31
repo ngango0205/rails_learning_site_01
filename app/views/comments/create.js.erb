@@ -1,0 +1,5 @@
+<% if current_page?(lesson_comments_path(@lesson)) %>
+  $("#form-lesson").html("<%= escape_javascript(render('comments/all_comments', object: @lesson)) %>");
+<% else %>
+  $("#form-lesson").html("<%= escape_javascript(render('comments/comments', object: @lesson)) %>");
+<% end %>

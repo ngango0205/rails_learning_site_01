@@ -1,0 +1,13 @@
+<% if notification.read_at.nil? %>
+  <%= link_to controller: :notifications, action: :update_seen do %>
+    <div class="notification">
+      <%= render "notifications/notification", notification: notification %>
+    </div>
+  <% end %>
+<% else %>
+  <%= link_to controller: :notifications, action: :update_seen do %>
+    <div class="notification_seen">
+      <%= render "notifications/notification", notification: notification %>
+    </div>
+  <% end %>
+<% end %>
