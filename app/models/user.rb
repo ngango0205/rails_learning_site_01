@@ -25,6 +25,8 @@ class User < ApplicationRecord
     length: {minimum: Settings.minimum.length_pass}
   has_secure_password
 
+  scope :search, ->q{where "name LIKE '%#{q}%'"}
+
   def follow other_user
     following << other_user
   end
