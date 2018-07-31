@@ -1,3 +1,4 @@
+//= require social-share-button
 //= require jquery
 //= require rails-ujs
 //= require activestorage

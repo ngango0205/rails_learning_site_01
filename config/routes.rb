@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     resource :like, module: :lessons
   end
 
+  resources :categories
   resources :user_relations, only: [:create, :destroy]
 end

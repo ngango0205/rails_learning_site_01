@@ -14,10 +14,15 @@
         <span><i class="material-icons">comment</i></span>
       </button>
     </div>
-    <div>
-      <%= button_to "https://www.facebook.com/share" do %>
+    <div class="dropdown_share">
+      <button class = "dropbtn" >
         <span><i class="material-icons" >share</i></span>
-      <% end %>
+      </button>
+      <div class="dropdown_share-content">
+         <%= social_share_button_tag lesson.name, allow_sites: %w(twitter) %>
+         <%= social_share_button_tag lesson.name, allow_sites: %w(facebook) %>
+         <%= social_share_button_tag lesson.name, allow_sites: %w(google_plus) %>
+      </div>
     </div>
   </div>
   <hr>

@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
   end
 
   def new
+    @all_category = Category.all
     @lesson = Lesson.new
   end
 
@@ -31,6 +32,8 @@ class LessonsController < ApplicationController
   def search
     @search = Lesson.search(params[:term]).order_by_name
                     .page(params[:page]).per Settings.page.child_in_page
+    @search_name = User.search(params[:term])
+                       .page(params[:page]).per Settings.page.child_in_page
     if request.referrer.include? search_url
       respond_to do |format|
         format.html
@@ -42,6 +45,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit :name, :description, :content
+    params.require(:lesson).permit :name, :description, :content, :category_id
   end
 end

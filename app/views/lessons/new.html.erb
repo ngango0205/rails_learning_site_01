@@ -12,6 +12,9 @@
       <%= f.label :content %>
       <%= f.text_field :content %>
 
+      <%= f.label :category_id %>
+      <%= f.select :category_id, options_for_select(@all_category.pluck(:name, :id))%>
+
       <%= f.submit t(".create_lesson"), class: "btn btn-primary" %>
     <% end %>
   </div>

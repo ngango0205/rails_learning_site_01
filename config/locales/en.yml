@@ -17,6 +17,7 @@ en:
   post: "post new"
   find_lesson: "Not find lesson"
   update: "Profile updated"
+  create_category_fail: "Create failed. Please try again!"
   layouts:
     footer:
       learn_more: "Learn more"
@@ -82,3 +83,7 @@ en:
       title: "Notification"
       content_1: "Hi"
       content_2: "You have new notification"
+  categories:
+    new:
+      title: "categorys"
+      create_category: "Creates"
