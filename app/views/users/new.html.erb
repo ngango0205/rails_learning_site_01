@@ -1,32 +1,55 @@
 <% provide :title, t(".title_signup") %>
 <div id="login-modal" class="modal">
   <div class="modal-content">
-    <h1><%= t ".title_signup" %></h1>
-
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <%= form_for @user do |f| %>
-        <%= render "shared/error_messages" %>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
+      <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title"><%= t ".title_signup" %></div>
+          </div>
+          <div style="padding-top:30px" class="panel-body" >
+            <%= form_for @user do |f| %>
+              <%= render "shared/error_messages" %>
+              <div class="form-group">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: "form-control" %>
+              </div>
 
-          <%= f.label :email %>
-          <%= f.email_field :email %>
+              <div class="form-group">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: "form-control" %>
+              </div>
 
-          <%= f.label :password %>
-          <%= f.password_field :password %>
+              <div class="form-group">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: "form-control" %>
+              </div>
 
-          <%= f.label :password_confirmation, t(".confirm") %>
-          <%= f.password_field :password_confirmation %>
+              <div class="form-group">
+                <%= f.label :password_confirmation, t(".confirm") %>
+                <%= f.password_field :password_confirmation, class: "form-control" %>
+              </div>
 
-          <%= f.label :role, class: "radio inline" do %>
-          <%= f.radio_button :role, checked: 1 %>
-          <span><%= t ".name_teacher" %></span>
-          <%= f.radio_button :role, checked: 0 %>
-          <span><%= t ".name_student" %></span>
-          <% end %>
-          <%= f.submit t(".create"), class: "btn btn-primary" %>
-        <% end %>
+              <div class="form-group">
+                <%= f.label :teacher, class: "radio-inline set" do %>
+                  <%= f.radio_button :role, "1", value: 1 %>
+                  <span>Teacher</span>
+                <% end %>
+
+                <%= f.label :student, class: "radio-inline set" do %>
+                  <%= f.radio_button :role, "0", value: 0 %>
+                  <span>Student</span>
+                <% end %>
+              </div>
+
+              <div class="form-group">
+                <div class="col-md-offset-3 col-md-9">
+                  <%= f.submit t(".create"), class: "btn btn-primary" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

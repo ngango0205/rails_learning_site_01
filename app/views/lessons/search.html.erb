@@ -20,5 +20,25 @@
         </table>
       </div>
     </div>
+    <div class="card-body">
+      <div class="card-title">
+      <h1 class="page-header">Users
+          <small><%= t ".search_1" %></small>
+        </h1>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-responsive-md table-striped table-hover">
+          <thead class="thead-light">
+            <tr align="center">
+              <td><h5><b><%= t ".users" %></b></h5></td>
+              <td><h5><b><%= t ".id" %></b></h5></td>
+            </tr>
+          </thead>
+          <tbody id="search_name_result">
+              <%= render "search_name_result", search_name_results: @search_name %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
