@@ -11,7 +11,7 @@ en:
   email: "Email: studybook@gmail.com"
   facebook: "FB: https://facebook.com/studybook"
   phone: "Phone: 0942298558"
-  followning: "following"
+  following: "following"
   follower: "follower"
   notification: "Notification"
   post: "post new"
@@ -31,8 +31,8 @@ en:
       search: "Search"
       all_notify: "All notification"
     menuside:
-      about: "About"
-      lessons: "Lessons"
+      my_lessons: "My lessons"
+      new_lesson: "New lesson"
       contact: "Contact"
   static_pages:
     home:

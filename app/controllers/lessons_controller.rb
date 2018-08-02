@@ -30,8 +30,8 @@ class LessonsController < ApplicationController
   end
 
   def search
-    @search = Lesson.search(params[:term]).order_by_name
-                    .page(params[:page]).per Settings.page.child_in_page
+    @search = Lesson.search(params[:term]).order_by_name.page(params[:page])
+                    .per Settings.page.child_in_page
     @search_name = User.search(params[:term])
                        .page(params[:page]).per Settings.page.child_in_page
     if request.referrer.include? search_url

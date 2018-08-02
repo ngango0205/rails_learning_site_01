@@ -1,7 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to t(".title"), root_path, id: "logo" %>
     <nav>
+    <%= link_to t(".title"), root_path, id: "logo" %>
     <ul class="navbar-nav search">
       <% if request.original_url.include? search_url %>
         <%= form_tag search_path, method: :get, class: "form-inline my-2 my-lg-0", remote: true do %>
@@ -30,8 +30,8 @@
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
         <li class="dropdown">
-            <%= link_to user_notifications_path(current_user),
-              class: "menu-button" do %>
+            <%= link_to "#",
+              class: "menu-button notifies-btn" do %>
               <i class="material-icons">notifications</i>
               <div class="notifications-count">
                   <%= current_user.notifications.count %>
@@ -57,7 +57,7 @@
           <% end %></li>
         <% else %>
           <li><%= link_to t(".help"), help_path, class: "menu-button" %></li>
-          <li><%= link_to t(".login"), login_path, class: "menu-button" %></li>
+          <li><%= link_to t(".login"), login_path, class: "menu-button", id: "btn-login" %></li>
         <% end %>
       </ul>
     </nav>

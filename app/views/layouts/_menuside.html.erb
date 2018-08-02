@@ -1,7 +1,18 @@
 <div class="sidenav">
-  <%= link_to t(".about"), "#" %>
-  <% if logged_in? %>
-    <%= link_to t(".lessons"), lessons_path %>
+  <br>
+  <%= link_to root_url, class: "icon-user" do %>
+    <%= gravatar_for current_user, size = Settings.image.icon_size %> <%= current_user.name %>
   <% end %>
-  <%= link_to t(".contact"), "#" %>
+  <br>
+  <% if logged_in? %>
+    <%= link_to lessons_path do %>
+      <i class="material-icons">bookmarks</i> <%= t ".my_lessons" %>
+    <% end %>
+    <%= link_to new_lesson_url do %>
+      <i class="material-icons">notifications</i> <%= t ".new_lesson" %>
+    <% end %>
+  <% end %>
+  <%= link_to "#" do %>
+    <i class="material-icons">notifications</i> <%= t ".contact" %>
+  <% end %>
 </div>
