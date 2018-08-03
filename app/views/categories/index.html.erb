@@ -1,0 +1,28 @@
+<div class="card z-depth-1 border-0">
+  <div class="card-body">
+    <div class="card-title">
+    <h1 class="page-header"><%= t ".cate" %>
+        <small><%= t ".less" %></small>
+      </h1>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-responsive-md table-striped table-hover">
+        <thead class="thead-light">
+          <tr align="center">
+            <td><h5><b><%= t ".cate" %></b></h5></td>
+            <td><h5><b><%= t ".dess" %></b></h5></td>
+          </tr>
+        </thead>
+        <tbody id="search_result">
+          <% @categories.each do |category| %>
+            <tr class="odd gradeX" align="center">
+              <td><%= category.name %></td>
+              <td><%= category.description %></td>
+            </tr>
+          <% end %>
+          <%= paginate @categories %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

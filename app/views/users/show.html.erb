@@ -21,4 +21,11 @@
       <%= render "follow_form" %>
     <% end %>
   </div>
+  <div>
+    <% @lessons.each do |lesson| %>
+      <div class="lesson">
+        <%= render "lessons/lesson", lesson: lesson %>
+      </div>
+    <% end %>
+  </div>
 </div>

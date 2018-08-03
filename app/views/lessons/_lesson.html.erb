@@ -8,15 +8,18 @@
       <h6><%= lesson.created_at.strftime "%D %H:%M" %></h6>
     </div>
     <div>
-       <%= image_tag lesson.picture.url if lesson.picture? %>
-      <%= lesson.content %>
-      <%if lesson.url? %>
-        <div class="post-video">
+      <div class="post-video">
+        <%= image_tag lesson.picture.url if lesson.picture? %>
+      </div>
+      <div class="post-video">
+        <%= lesson.content %>
+      </div>
+      <div class="post-video">
+        <%if lesson.url? %>
           <iframe src="https://www.youtube.com/embed/<%=lesson.url %>" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
   <div class="btn-group">
     <div id = "lesson_likes">
     <%= render "lessons/likes", lesson: lesson %>
