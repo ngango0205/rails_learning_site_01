@@ -78,6 +78,10 @@ en:
       comment: "Comment ..."
       all: "All"
       comments: "comments"
+    comments:
+      create:
+        comments: "comments"
+        all: "All"
   user_mailer:
     notify:
       title: "Notification"

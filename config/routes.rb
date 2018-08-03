@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/search", to: "lessons#search", as: "search"
   get "/notifications", to: "notifications#update_seen"
+  get "/notifications/refresh_part", to: "notifications#refresh_part"
 
   resources :users do
     resources :notifications, only: [:index, :update, :destroy]
@@ -25,4 +26,5 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :user_relations, only: [:create, :destroy]
+  mount ActionCable.server => "/cable"
 end

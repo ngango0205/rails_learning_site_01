@@ -1,5 +1,2 @@
-<% if current_page?(lesson_comments_path(@lesson)) %>
-  $("#form-lesson").html("<%= escape_javascript(render('comments/all_comments', object: @lesson)) %>");
-<% else %>
-  $("#form-lesson").html("<%= escape_javascript(render('comments/comments', object: @lesson)) %>");
-<% end %>
+$("#form-lesson").html("<%= escape_javascript(render('comments/comments', object: @lesson)) %>");
+$("#all-comment").html("<%= escape_javascript(link_to (t('.all') + " #{@lesson.comments.count} " + t('.comments')), lesson_comments_path(@lesson.id)) %>");
