@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
   def show
     @user = User.find_by id: params[:id]
+    @lessons = @user.lessons.page(params[:page])
+                            .per Settings.page.child_in_page
   end
 
   def new
@@ -31,6 +33,22 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def following
+    @title = t "following"
+    @user  = User.find_by id: params[:id]
+    @users = @user.following.page(params[:page])
+                            .per Settings.page.child_in_page
+    render :show_follow
+  end
+
+  def followers
+    @title = t "follower"
+    @user  = User.find(params[:id])
+    @users = @user.followers.page(params[:page])
+                            .per Settings.page.child_in_page
+    render :show_follow
   end
 
   private

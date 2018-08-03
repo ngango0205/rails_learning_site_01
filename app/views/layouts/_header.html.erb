@@ -6,7 +6,8 @@
       <% if request.original_url.include? search_url %>
         <%= form_tag search_path, method: :get, class: "form-inline my-2 my-lg-0", remote: true do %>
         <div class="input-group">
-          <%= text_field_tag :term, params["term"], placeholder: t(".search"), class: "form-control", id: "search-autocomplete" %>
+          <%= text_field_tag :term, params["term"], placeholder: t(".search"),
+            data: {autocomplete_lesson: Lesson.all.map(&:name)}, class: "form-control", id: "search-autocomplete" %>
           <span class="input-group-btn">
             <button class="btn btn-outline-secondary" type="submit">
               <i class="glyphicon glyphicon-search"></i>
@@ -17,7 +18,8 @@
       <% else %>
          <%= form_tag search_path, method: :get, class: "form-inline my-2 my-lg-0" do %>
          <div class="input-group">
-          <%= text_field_tag :term, params["term"], placeholder: t(".search"), class: "form-control", id: "search-autocomplete" %>
+          <%= text_field_tag :term, params["term"], placeholder: t(".search"),
+          data: {autocomplete_lesson: Lesson.all.map(&:name)}, class: "form-control", id: "search-autocomplete" %>
           <span class="input-group-btn">
             <button class="btn btn-outline-secondary" type="submit">
               <i class="glyphicon glyphicon-search"></i>

@@ -1,4 +1,9 @@
 class CategoriesController < ApplicationController
+  def index
+    @categories = Category.all.page(params[:page])
+                              .per Settings.page.child_in_page
+  end
+
   def new
     @category = Category.new
   end
