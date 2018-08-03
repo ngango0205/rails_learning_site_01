@@ -241,7 +241,7 @@
 
 .column-avt {
   float: left;
-  width: 40%;
+  width: 20%;
 }
 
 .column-name {
@@ -516,14 +516,6 @@ input_search {
     color: $state-danger-text;
   }
 }
-.radio{
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 0;
-    font-weight: bold;
-  }
-}
 
 .seach {
   display: inline-block;
@@ -574,3 +566,20 @@ input_search {
   background-color: $main_background;
 }
 
+.set{
+  width: 151px;
+  height: 25px
+}
+
+#content_lesson{
+  margin-top: 100px;
+}
+
+.post-video {
+  text-align: center;
+}
+
+.post-video iframe {
+ width: 560px;
+height: 315px;
+}

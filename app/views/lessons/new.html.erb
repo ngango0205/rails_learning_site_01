@@ -6,17 +6,19 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
 
+      <%= f.label :category_id %>
+      <%= f.select :category_id, options_for_select(@all_category.pluck(:name, :id))%>
+
       <%= f.label :description %>
       <%= f.text_area :description, class: "lesson-description" %>
 
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+
       <%= f.label :content %>
-      <%= f.text_area :content, class: "lesson-content" %>
+      <%= f.text_area :content%>
 
-      <%= f.label :category_id %>
-      <%= f.select :category_id, class: "lesson-content" %>
-
-      <%= f.label :category_id %>
-      <%= f.select :category_id, options_for_select(@all_category.pluck(:name, :id))%>
+      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
 
       <%= f.submit t(".create_lesson"), class: "btn btn-primary" %>
     <% end %>
