@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       cookies.permanent.signed[:user_id] = user.id
       redirect_to user_home_url
     else
-      flash.now[:danger] = t ".invalid_session"
+      flash.now[:danger] = t "invalid_session"
       render :new
     end
   end

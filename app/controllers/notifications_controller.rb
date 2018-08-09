@@ -1,5 +1,5 @@
 class NotificationsController < ApplicationController
-  before_action :find_notification, only: [:show, :update_seen]
+  before_action :find_notification, only: [:show]
 
   def index
     @notifications = Notification.where recipient: current_user
@@ -8,6 +8,7 @@ class NotificationsController < ApplicationController
   def show; end
 
   def update_seen
+    @notification = Notification.find_by params[:id]
     @lesson = if @notification.notifiable.is_a? Lesson
                 @notification.notifiable
               else
@@ -20,7 +21,7 @@ class NotificationsController < ApplicationController
 
   def refresh_part
     respond_to do |format|
-      format.js {render action: "refresh_part.js"}
+      format.js{render action: "refresh_part.js"}
     end
   end
 

@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new comment_params
     @lesson = @comment.lesson
     if @comment.save
-      create_notifications @comment.lesson.user.followers, @comment
+      create_notifications @comment.lesson.user.followers, t("post"), @comment
       respond_to do |format|
         format.html{redirect_to @lesson}
         format.js

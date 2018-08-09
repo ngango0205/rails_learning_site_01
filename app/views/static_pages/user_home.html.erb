@@ -1,6 +1,10 @@
 <%= provide :title, t(".title") %>
 <% if logged_in? %>
-  <%= render "lessons/lessons", object: @followed_lessons %>
+  <% if current_user.following.count == 0 %>
+    <p class="center"><%= t ".not_lessons_follow" %> <%= link_to t(".categories"), categories_path %></p>
+  <% else %>
+    <%= render "lessons/lessons", object: @followed_lessons %>
+    <% end %>
 <% else %>
   <div class="center jumbotron">
     <h1><%= t ".title" %></h1>

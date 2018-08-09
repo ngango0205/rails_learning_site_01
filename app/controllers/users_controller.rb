@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by id: params[:id]
     @lessons = @user.lessons.page(params[:page])
-                            .per Settings.page.child_in_page
+                    .per Settings.page.child_in_page
   end
 
   def new
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     @title = t "following"
     @user  = User.find_by id: params[:id]
     @users = @user.following.page(params[:page])
-                            .per Settings.page.child_in_page
+                  .per Settings.page.child_in_page
     render :show_follow
   end
 
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     @title = t "follower"
     @user  = User.find(params[:id])
     @users = @user.followers.page(params[:page])
-                            .per Settings.page.child_in_page
+                  .per Settings.page.child_in_page
     render :show_follow
   end
 

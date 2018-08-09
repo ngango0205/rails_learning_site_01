@@ -1,3 +1,3 @@
 function getFocus(id) {
-  document.getElementById("message_" + id.toString()).focus();
+  document.getElementById('message_' + id.toString()).focus();
 }

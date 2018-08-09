@@ -3,6 +3,9 @@
 <div id="login-modal" class="modal">
   <div class="modal-content">
     <div class="row">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+      <% end %>
       <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info" >
           <div class="panel-heading">
