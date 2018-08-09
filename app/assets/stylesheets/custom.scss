@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "colour";
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
 
 #main {
   background: $main_background;
@@ -608,12 +609,10 @@ input_search {
   width: 6%;
 }
 
-@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
-body{margin-top:20px;}
 .fa-fw {width: 2em;}
 
 .menu_side{
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .table{
@@ -621,7 +620,7 @@ body{margin-top:20px;}
 }
 
 header {
-  z-index: 1 !important;
+  z-index: 100 !important;
 }
 
 .ui-menu-item {

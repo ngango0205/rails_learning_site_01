@@ -98,6 +98,8 @@ ActiveRecord::Schema.define(version: 2018_08_12_172558) do
     t.integer "role"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "provider"
+    t.string "uid"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
