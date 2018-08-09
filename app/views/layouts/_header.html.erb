@@ -39,14 +39,7 @@
             </div>
           </div>
             <div class="dropdown-content" id="dropdown-content">
-              <% current_user.notifications.last(Settings.notify.max_notify_show).reverse.each do |notification| %>
-                <div>
-                  <%= render "notifications/header_notification",
-                    notification: notification %>
-                </div>
-              <% end %>
-              <div><%= link_to t(".all_notify"), notifications_path, class: "all-notify-header" %>
-              </div>
+              <%= render "notifications/header_notifications" %>
             </div>
         </li>
           <li><%= link_to root_path, class: "menu-button" do %>
@@ -57,7 +50,6 @@
             <i class="material-icons">input</i>
           <% end %></li>
         <% else %>
-          <li><%= link_to t(".help"), help_path, class: "menu-button" %></li>
           <li><%= link_to t(".login"), login_path, class: "menu-button", id: "btn-login" %></li>
         <% end %>
       </ul>

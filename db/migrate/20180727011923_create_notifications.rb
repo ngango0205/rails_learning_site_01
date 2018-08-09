@@ -7,6 +7,7 @@ class CreateNotifications < ActiveRecord::Migration[5.2]
       t.string :action
       t.integer :notifiable_id
       t.string :notifiable_type
+      t.string :notification_url
 
       t.timestamps
     end

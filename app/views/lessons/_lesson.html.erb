@@ -4,7 +4,7 @@
       <%= gravatar_for lesson.user, size = Settings.image.small_size %>
     </div>
     <div class="column-name">
-      <h3 class="user-name"><%= lesson.user.name %></h4>
+      <h3 class="user-name"><%= link_to lesson.user.name, lesson.user %></h4>
       <h6><%= lesson.created_at.strftime "%D %H:%M" %></h6>
     </div>
     <div>

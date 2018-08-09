@@ -1,6 +1,6 @@
 <%= provide :title, t(".title") %>
 <% if @lessons.size == 0 %>
-  <p class="center"><%= t ".not_follow_anyone" %></p>
+  <p class="center"><%= t ".not_lessons" %> <%= link_to t(".create_now"), new_lesson_path %></p>
 <% else %>
   <% @lessons.each do |lesson| %>
     <div class="lesson">

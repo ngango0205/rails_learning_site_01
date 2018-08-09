@@ -8,9 +8,11 @@
     </li>
     <% if logged_in? %>
       <li>
+        <% if current_user.role == 1 %>
         <%= link_to lessons_path do %>
-          <i class="material-icons">bookmarks</i>
+          <i class="material-icons">import_contacts</i>
             <%= t ".my_lessons" %>
+        <% end %>
         <% end %>
       </li>
       <li>
@@ -29,8 +31,8 @@
       </li>
     <% end %>
     <li>
-      <%= link_to "#" do %>
-      <i class="material-icons">notifications</i> <%= t ".contact" %>
+      <%= link_to contact_path do %>
+      <i class="material-icons">contacts</i> <%= t ".contact" %>
     <% end %>
     </li>
   </ul>

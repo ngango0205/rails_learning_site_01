@@ -6,6 +6,7 @@ en:
   create_lesson_fail: "Sign up failed. Please try again!"
   create_comment_fail: "Comment failed. Please try again!"
   show_lesson_fail: "Show lesson failed. Please try again!"
+  show_category_fail: "Show category failed. Please try again!"
   info: "Information"
   contact: "Contact"
   email: "Email: studybook@gmail.com"
@@ -15,6 +16,8 @@ en:
   follower: "Follower"
   notification: "Notification"
   post: "post new"
+  followed: "followed"
+  unfollowed: "unfollowed"
   find_lesson: "Not find lesson"
   update: "Profile updated"
   create_category_fail: "Create failed. Please try again!"
@@ -39,6 +42,15 @@ en:
     home:
       title: "Welcome to Studybook"
       sign_up: "Sign Up Now"
+    user_home:
+      not_lessons_follow: "You don't followed anyone."
+      categories: "See categories ?"
+    contact:
+      contact_us: "Contact us"
+      contact_info: "Contact information"
+      call_us: "Call us"
+      office_location: "Office location"
+      email: "Email"
   users:
     new:
       create: "Create my account"
@@ -71,6 +83,8 @@ en:
       create_lesson: "Create lesson"
     index:
       title: "All lessons"
+      not_lessons: "You don't have a lesson."
+      create_now: "Create now ?"
     search:
       lessons: "Lessons"
       des: "Description"
@@ -90,9 +104,12 @@ en:
       content_2: "You have new notification"
   categories:
     new:
-      title: "categorys"
+      title: "categories"
       create_category: "Creates"
     index:
       cate: "Categories"
+      less: "Lessons"
+      des: "Description"
+    show:
       less: "Lessons"
       des: "Description"

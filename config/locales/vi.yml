@@ -1,17 +1,101 @@
 vi:
   title: "Studybook"
+  copyright: "© 2018 Copyright: "
+  welcome: "Chào mừng đến với trang của tôi"
+  invalid_session: "Kết hợp email / mật khẩu không hợp lệ"
+  create_lesson_fail: "Đăng ký không thành công. Vui lòng thử lại!"
+  create_comment_fail: "Nhận xét không thành công. Vui lòng thử lại!"
+  show_lesson_fail: "Hiển thị bài học không thành công. Vui lòng thử lại!"
+  info: "Thông tin"
+  contact: "Liên hệ"
+  email: "Email: studybook@gmail.com"
+  facebook: "FB: https://facebook.com/studybook"
+  phone: "Phone: 0942298558"
+  following: "Following"
+  follower: "Follower"
+  notification: "Thông báo"
+  post: "đăng bài mới"
+  find_lesson: "Không tìm thấy bài học"
+  update: "Hồ sơ được cập nhật"
+  create_category_fail: "Tạo không thành công. Vui lòng thử lại!"
   layouts:
     footer:
-      learn_more: "Xem thêm"
-      about: "Khái Quát "
-      contact: "Liên Lạc"
+      learn_more: "Learn more"
+      about: "Giới thiệu"
+      contact: "Liên hệ"
     header:
       title: "Studybook"
-      home: "Trang Chủ"
-      help: "Trợ Giúp"
-      login: "Đăng Nhập"
+      home: "Home"
+      help: "Help"
+      login: "Đăng nhập"
+      search: "Search"
+      all_notify: "Tất cả thông báo"
+    menuside:
+      my_lessons: "Bài học của tôi"
+      new_lesson: "Bài học mới"
+      contact: "Liên hệ"
+      my_categories: "Danh mục"
   static_pages:
     home:
       title: "Chào mừng bạn đến với Studybook"
-      sign_up: "Đăng Ký"
-
+      sign_up: "Đăng ký ngay!"
+  users:
+    new:
+      create: "Tạo tài khoản"
+      name_teacher: "Giáo viên"
+      title_signup: "Đăng ký"
+      confirm: "Xác nhận"
+      name_student: "Sinh viên"
+    follow:
+      follow_submit: "Theo dõi"
+    unfollow:
+      unfo_submit: "Hủy theo dõi"
+    edit:
+      edit_user: "Chỉnh sửa"
+      update_pf: "Cập nhật tiểu sử của bạn"
+  shared:
+    error_messages:
+      error_message: "Biểu mẫu chứa"
+      error: "lỗi"
+  sessions:
+    new:
+      login: "Đăng nhập"
+      sign_up: "Đăng ký ngay"
+      ques: "Người dùng mới?"
+      logout: "Đăng xuất"
+  lessons:
+    show:
+      title: "Hiển thị bài học"
+    new:
+      title: "Bài học mới"
+      create_lesson: "Tạo bài học"
+    index:
+      title: "Tất cả các bài học"
+    search:
+      lessons: "Bài học"
+      des: "Mô tả"
+      search_1: "Tìm kiếm"
+    lesson:
+      comment: "Nhận xét ..."
+      all: "Tất cả"
+      comments: "nhận xét"
+    comments:
+      create:
+        comments: "nhận xét"
+        all: "Tất cả"
+  user_mailer:
+    notify:
+      title: "Thông báo"
+      content_1: "Xin chào"
+      content_2: "Bạn có thông báo mới"
+  categories:
+    new:
+      title: "categorys"
+      create_category: "Tạo"
+    index:
+      cate: "Danh mục"
+      less: "Bài học"
+      des:  "Mô tả"
+    show:
+      less: "Bài học"
+      des: "Mô tả"

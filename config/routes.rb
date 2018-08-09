@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/search", to: "lessons#search", as: "search"
   get "/notifications", to: "notifications#update_seen"
+  get "/notifications/all", to: "notifications#index"
   get "/notifications/refresh_part", to: "notifications#refresh_part"
 
   resources :users do

@@ -1,0 +1,42 @@
+    <section id="contact">
+           <h3 class="text-center text-uppercase"><%= t "contact_us" %></h3>
+           <p class="text-center w-75 m-auto"><%= t "contact_info" %></p>
+           <div class="row">
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5"><%= t "call_us" %></h4>
+                    <p><%= Settings.info.phone %></p>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5"><%= t "office_location" %></h4>
+                   <address><p><%= Settings.info.address %></p></address>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5"><%= t "office_location" %></h4>
+                    <address><p><%= Settings.info.address %></p></address>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5"><%= t "email" %></h4>
+                    <p><p><%= Settings.info.email %></p></p>
+                  </div>
+                </div>
+             </div>
+           </div>
+    </section>
