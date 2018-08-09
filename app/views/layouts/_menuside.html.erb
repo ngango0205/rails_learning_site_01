@@ -6,7 +6,7 @@
         <%= current_user.name %>
       <% end %>
     </li>
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <li>
         <% if current_user.role == 1 %>
         <%= link_to lessons_path do %>

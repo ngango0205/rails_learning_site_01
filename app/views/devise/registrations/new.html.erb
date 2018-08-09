@@ -8,11 +8,13 @@
             <div class="panel-title"><%= t ".title_signup" %></div>
           </div>
           <div style="padding-top:30px" class="panel-body" >
-            <%= form_for @user do |f| %>
-              <%= render "shared/error_messages" %>
+            <%= form_for resource, as: resource_name,
+              url: registration_path(resource_name) do |f| %>
+              <%= devise_error_messages! %>
               <div class="form-group">
                 <%= f.label :name %>
-                <%= f.text_field :name, class: "form-control" %>
+                <%= f.text_field :name, autofocus: true,
+                  class: "form-control" %>
               </div>
 
               <div class="form-group">
@@ -22,23 +24,25 @@
 
               <div class="form-group">
                 <%= f.label :password %>
-                <%= f.password_field :password, class: "form-control" %>
+                <%= f.password_field :password, autocomplete: "off",
+                  class: "form-control" %>
               </div>
 
               <div class="form-group">
                 <%= f.label :password_confirmation, t(".confirm") %>
-                <%= f.password_field :password_confirmation, class: "form-control" %>
+                <%= f.password_field :password_confirmation,
+                  autocomplete: "off", class: "form-control" %>
               </div>
 
               <div class="form-group">
                 <%= f.label :teacher, class: "radio-inline set" do %>
                   <%= f.radio_button :role, "1", value: 1 %>
-                  <span>Teacher</span>
+                  <span><%= t ".teacher" %></span>
                 <% end %>
 
                 <%= f.label :student, class: "radio-inline set" do %>
                   <%= f.radio_button :role, "0", value: 0 %>
-                  <span>Student</span>
+                  <span><%= t ".student" %></span>
                 <% end %>
               </div>
 
@@ -48,6 +52,7 @@
                 </div>
               </div>
             <% end %>
+            <%= render "devise/shared/links" %>
           </div>
         </div>
       </div>

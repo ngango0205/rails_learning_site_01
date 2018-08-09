@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :logged_in_user, only: [:create]
+  before_action :user_signed_in?, only: [:create]
 
   def index
     @lessons = current_user.lessons.page(params[:page])
@@ -34,17 +34,17 @@ class LessonsController < ApplicationController
                     .page(params[:page]).per Settings.page.child_in_page
     @search_name = User.search(params[:term])
                        .page(params[:page]).per Settings.page.child_in_page
-    if request.referrer.include? search_url
-      respond_to do |format|
-        format.html
-        format.js
-      end
+    return unless request.referrer.include? search_url
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
   private
 
   def lesson_params
-    params.require(:lesson).permit :name, :description, :content, :category_id, :url, :picture
+    params.require(:lesson).permit :name, :description, :content, :category_id,
+      :url, :picture
   end
 end

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :notifications, foreign_key: :recipient_id
   has_many :histories, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -13,19 +15,11 @@ class User < ApplicationRecord
   has_many :followers, through: :followed_relations, source: :follower
   has_many :likes
 
-  before_save :downcase_email
-  validates :name,  presence: true,
-    length: {maximum: Settings.maximum.length_name}
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true,
-    length: {maximum: Settings.maximum.length_email},
-    format: {with: VALID_EMAIL_REGEX},
-    uniqueness: {case_sensitive: false}
-  validates :password, presence: true,
-    length: {minimum: Settings.minimum.length_pass}
-  has_secure_password
-
   scope :search, ->(q){where "name LIKE '%#{q}%'"}
+
+  def current_user? current_user
+    self == current_user
+  end
 
   def follow other_user
     following << other_user
@@ -41,11 +35,5 @@ class User < ApplicationRecord
 
   def likes? lesson
     lesson.likes.where(user_id: id).any?
-  end
-
-  private
-
-  def downcase_email
-    email.downcase!
   end
 end

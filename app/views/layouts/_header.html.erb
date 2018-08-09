@@ -30,7 +30,7 @@
       <% end %>
     </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? %>
+        <% if user_signed_in? %>
         <li class="dropdown">
           <div class="menu-button" id="btn-notify">
             <i class="material-icons">notifications</i>
@@ -45,12 +45,13 @@
           <li><%= link_to root_path, class: "menu-button" do %>
             <i class="material-icons">home</i>
           <% end %></li>
-          <li><%= link_to logout_path,
+          <li><%= link_to destroy_user_session_path,
             {class: "menu-button", method: :delete} do %>
             <i class="material-icons">input</i>
           <% end %></li>
         <% else %>
-          <li><%= link_to t(".login"), login_path, class: "menu-button", id: "btn-login" %></li>
+          <li><%= link_to t(".login"), new_user_session_path,
+            class: "menu-button", id: "btn-login" %></li>
         <% end %>
       </ul>
     </nav>
