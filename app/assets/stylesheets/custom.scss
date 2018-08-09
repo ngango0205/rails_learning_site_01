@@ -172,6 +172,28 @@
   margin-top: 4px;
 }
 
+#loginbox {
+  margin-top: 50px;
+}
+
+.panel-body {
+  padding-top: 30px;
+}
+
+.panel-body .input-group {
+  margin-bottom: 25px;
+}
+
+.panel-body .form-group {
+  margin-top: 10px;
+}
+
+.control div {
+  border-top: 1px solid $colour_888;
+  padding-top: 15px;
+  font-size: 85%;
+}
+
 .follow-btn {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }

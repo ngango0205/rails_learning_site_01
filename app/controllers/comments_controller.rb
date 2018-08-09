@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user
+  before_action :user_signed_in?
   def index
     @lesson = Lesson.find params[:lesson_id] if params[:lesson_id]
     @comments = @lesson.comments

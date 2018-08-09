@@ -5,15 +5,14 @@ Rails.application.routes.draw do
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
   get "/search", to: "lessons#search", as: "search"
   get "/notifications", to: "notifications#update_seen"
   get "/notifications/all", to: "notifications#index"
   get "/notifications/refresh_part", to: "notifications#refresh_part"
 
-  resources :users do
+  devise_for :users
+
+  resources :users, only: [:index, :show] do
     resources :notifications, only: [:index, :update, :destroy]
     member do
       get :following, :followers

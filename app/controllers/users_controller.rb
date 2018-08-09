@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :user_signed_in?, only: [:edit, :update]
   def show
     @user = User.find_by id: params[:id]
     @lessons = @user.lessons.page(params[:page])
@@ -27,11 +27,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by id: params[:id]
-    if @user.update_attributes(user_params)
+    if @user.update_attributes user_params
       flash[:success] = t "update"
       redirect_to @user
     else
-      render :edit
+      redirect_to edit_user_registration_url
     end
   end
 

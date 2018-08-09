@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-  include SessionsHelper
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -20,12 +21,15 @@ class ApplicationController < ActionController::Base
                   .send_notification_email
     end
   end
-  private
 
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "flash.pls_login"
-    redirect_to login_url
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
+      user_params.permit :role, :name, :email, :password,
+        :password_confirmation, :address
+    end
+    devise_parameter_sanitizer.permit(:account_update) do |user_params|
+      user_params.permit :name, :email, :password,
+        :password_confirmation, :current_password
+    end
   end
 end

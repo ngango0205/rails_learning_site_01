@@ -51,30 +51,81 @@ en:
       call_us: "Call us"
       office_location: "Office location"
       email: "Email"
-  users:
-    new:
-      create: "Create my account"
-      name_teacher: "Teacher"
-      title_signup: "Sign Up"
-      confirm: "Confirmation"
-      name_student: "Student"
-    follow:
-      follow_submit: "Follow"
-    unfollow:
-      unfo_submit: "Unfollow"
-    edit:
-      edit_user: "Edit"
-      update_pf: "Update your profile"
   shared:
     error_messages:
       error_message: "The form contains"
       error: "error"
-  sessions:
-    new:
-      login: "Log In"
-      sign_up: "Sign Up Now"
-      ques: "New User?"
-      logout: "Logout"
+  devise:
+    passwords:
+      new:
+        forgot_password: "Forgot yout password"
+        send_instructions: "Send me reset password instructions"
+      edit:
+        change_password: "Change my password"
+        characters_minimum: "characters minimum"
+    sessions:
+      new:
+        login: "Log In"
+        sign_up: "Sign Up Now"
+        ques: "New User?"
+        logout: "Logout"
+    registrations:
+      new:
+        create: "Create my account"
+        teacher: "Teacher"
+        title_signup: "Sign Up"
+        confirm: "Confirmation"
+        student: "Student"
+      follow:
+        follow_submit: "Follow"
+      unfollow:
+        unfo_submit: "Unfollow"
+      edit:
+        edit_user: "Edit"
+        update_pf: "Update your profile"
+        current_waiting: "Currently waiting confirmation for: "
+        leave_blank: "(leave blank if you don't want to change it)"
+        need_password: "(we need your current password to confirm your changes)"
+        back: "Back"
+    confirmations:
+      new:
+        resend_confirmation: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        welcome: "Welcome"
+        can_confirm: "You can confirm your account email through the link 
+          below:"
+      email_changed:
+        hello: "Hello "
+        content_1: "We're contacting you to notify you that your email is 
+          being changed to"
+      password_change:
+        hello: "Hello"
+        content_1: "We're contacting you to notify you that your password has 
+          been changed."
+      reset_password_instructions:
+        hello: "Hello"
+        content_1: "Someone has requested a link to change your password. 
+          You can do this through the link below."
+        content_2: "If you didn't request this, please ignore this email."
+        content_3: "Your password won't change until you access the link above 
+          and create a new one."
+    unlocks:
+      new:
+        resend_unlock: "Resend unlock instructions"
+    shared:
+      links:
+        log_in: "Log in"
+        sign_up: "Sign up"
+        forgot_pass: "Forgot your password?"
+        rev_confirm: "Didn't receive confirmation instructions?"
+        rev_unlock: "Didn't receive unlock instructions?"
+        sign_in_with: "Sign in with "
+  users:
+    follow:
+      follow_submit: "Follow"
+    unfollow:
+      unfo_submit: "Unfollow"
   lessons:
     show:
       title: "Show lesson"

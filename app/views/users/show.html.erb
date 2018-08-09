@@ -1,10 +1,10 @@
 <% provide(:title, @user.name) %>
 <div class="user-infomation">
   <div class="user-cover">
-    <% if current_user? @user %>
+    <% if @user.current_user? %>
       <div>
         <%= gravatar_for @user %>
-        <h1><%= link_to @user.name, edit_user_path(@user.id) %></h1>
+        <h1><%= link_to @user.name, edit_user_registration_path(@user.id) %></h1>
       </div>
     <% else %>
       <div>
@@ -17,7 +17,7 @@
       <%= render "shared/count" %>
   </div>
   <div class="follow-btn">
-    <%  if logged_in? %>
+    <%  if user_signed_in? %>
       <%= render "follow_form" %>
     <% end %>
   </div>
