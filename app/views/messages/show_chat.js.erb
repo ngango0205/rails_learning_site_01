@@ -1,0 +1,9 @@
+$('.popup-chat').html("<%= j render('messages/chat_popup', user: @user_chat,
+    room: @room) %>");
+$('.popup-box').css("display", "block");
+$('#close-chat-btn').click(function() {
+  $('.popup-box').css("display", "none");
+});
+$(function() {
+  message_listen();
+})

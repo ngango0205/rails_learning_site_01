@@ -1,0 +1,21 @@
+<div id="frame">
+<div id="sidepanel">
+    <div id="profile">
+      <div class="wrap">
+        <%= gravatar_for current_user, size = Settings.image.big_size %>
+        <p><%= current_user.name %></p>
+      </div>
+    </div>
+    <div id="search">
+      <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
+      <input type="text" placeholder="Search contacts..." />
+    </div>
+    <div id="contacts">
+      <ul class="list-contacts">
+        <% current_user.following.each do |user| %>
+          <%= render "users/user_contact", user: user %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
