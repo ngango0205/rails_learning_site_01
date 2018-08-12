@@ -18,3 +18,7 @@ info:
   email: "henchiyb@gmail.com"
   phone: "0942298558"
   address: "HTP Building Tran Khat Chan"
+resize:
+  to_fill_1: 118
+  to_fill_2: 100
+  to_limit: 800

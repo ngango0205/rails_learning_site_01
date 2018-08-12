@@ -16,7 +16,7 @@
       <%= f.text_field :url %>
 
       <%= f.label :content %>
-      <%= f.text_area :content%>
+      <%= f.cktext_area :content, class: "tinymce", rows: 20, cols: 40 %>
 
       <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
 
