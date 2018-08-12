@@ -1,10 +1,14 @@
+# frozen_string_literal: true
+
+# Use this hook to configure devise mailer, warden hooks and so forth.
+# Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = '78ef3233768583c7163a48a3fb73a1cc3adece8c9e1ac2b33d20b7ff04d9381cb0eae235948114a699517bddb49db9718e9a2e96f4caf11f84ebd92e97f4cc13'
+  # config.secret_key = '4585e0eb37be4bd322ebc8e72b0da53153e3c2d2ca3c43a2f652b87d8e0c8c1271f9c8caa75d3f3dd31c7f9cc4e3af97575ca448ab1ed3068345ea052fb37b65'
   
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -14,7 +18,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = ENV["EMAIL_SEND"]
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -110,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'c7f924f1f01d2b2e63c8eea2c84b94f325134158570319e2157baa6a5054f36032c4ff3f88e312ba64a12a4b477c8717ebd08e39149776fe2bd8c1cdb4693578'
+  # config.pepper = '4a7238405e31cb301f795a138717679412c650d37255aa69fd3df5383b8667c572bb9e0211b3e3e684034852169ff34ce9bd1b02732e1e97ade598a03e60d8e2'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -166,7 +170,6 @@ Devise.setup do |config|
   # to give user feedback and not to assert the e-mail validity.
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
-  config.mailer = "Devise::Mailer"
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.

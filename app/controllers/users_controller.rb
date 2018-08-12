@@ -51,6 +51,11 @@ class UsersController < ApplicationController
     render :show_follow
   end
 
+  def index
+    @search = User.search(params[:q])
+    @users = @search.result(:distinct => true)
+  end
+
   private
 
   def user_params

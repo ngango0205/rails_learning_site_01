@@ -12,7 +12,7 @@
         <%= image_tag lesson.picture.url if lesson.picture? %>
       </div>
       <div class="post-video">
-        <%= lesson.content %>
+        <%= raw(lesson.content) %>
       </div>
       <div class="post-video">
         <%if lesson.url? %>

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   root "static_pages#home"
 
   get "/user_home", to: "static_pages#user_home"
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
-  get "/search", to: "lessons#search", as: "search"
+  get "/search", to: "search#index", as: "search"
   get "/notifications", to: "notifications#update_seen"
   get "/notifications/all", to: "notifications#index"
   get "/notifications/refresh_part", to: "notifications#refresh_part"

@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
-ruby "2.5.1"
+ruby "2.4.3"
 
 gem "bcrypt", "3.1.12"
 gem "bootsnap", ">= 1.1.0", require: false
@@ -20,10 +20,12 @@ gem "material_icons"
 gem "mini_magick", "4.7.0"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.0"
+gem "ransack"
 gem "sass-rails", "~> 5.0"
 gem "social-share-button"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
+gem "ckeditor"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

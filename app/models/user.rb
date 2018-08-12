@@ -15,8 +15,6 @@ class User < ApplicationRecord
   has_many :followers, through: :followed_relations, source: :follower
   has_many :likes
 
-  scope :search, ->(q){where "name LIKE '%#{q}%'"}
-
   def current_user? current_user
     self == current_user
   end
