@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get "/notifications/all", to: "notifications#index"
   get "/notifications/refresh_part", to: "notifications#refresh_part"
 
-  devise_for :users
+  devise_for :users, controllers:{
+    omniauth_callbacks: "users/omniauth_callbacks"}
 
   resources :users, only: [:index, :show] do
     resources :notifications, only: [:index, :update, :destroy]
