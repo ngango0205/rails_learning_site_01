@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   def create_notifications recipients, action, notifiable
-    case notifiable.is_a?
+    case notifiable
     when User
       @url = user_url notifiable.id
     when Lesson

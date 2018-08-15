@@ -12,6 +12,6 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
 
   update_counter: (counter) ->
     $counter = $('#notifications-count')
-    val = parseInt($counter.text()) + 1
+    val = counter
     $counter
     .text(val)
