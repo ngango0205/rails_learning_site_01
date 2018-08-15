@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  before_action :search
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def set_locale
@@ -31,5 +32,9 @@ class ApplicationController < ActionController::Base
       user_params.permit :name, :email, :password,
         :password_confirmation, :current_password
     end
+  end
+
+  def search
+    @q = User.search params[:q]
   end
 end

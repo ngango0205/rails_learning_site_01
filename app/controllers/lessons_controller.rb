@@ -29,18 +29,6 @@ class LessonsController < ApplicationController
     redirect_to lessons_path
   end
 
-  def search
-    @search = Lesson.search(params[:term]).order_by_name
-                    .page(params[:page]).per Settings.page.child_in_page
-    @search_name = User.search(params[:term])
-                       .page(params[:page]).per Settings.page.child_in_page
-    return unless request.referrer.include? search_url
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
-
   private
 
   def lesson_params

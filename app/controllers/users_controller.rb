@@ -51,6 +51,17 @@ class UsersController < ApplicationController
     render :show_follow
   end
 
+  def search
+    @q = User.ransack(params[:q])
+    @users = @q.result.page(params[:page])
+                                      .per Settings.page.child_in_page
+    return unless request.referrer.include? search_users_url
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   private
 
   def user_params

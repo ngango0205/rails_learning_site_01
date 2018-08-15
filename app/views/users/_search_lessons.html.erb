@@ -1,0 +1,9 @@
+<% search_lessons.each do |user| %>
+  <% user.lessons.each do |lesson| %>
+    <tr class="odd gradeX" align="center">
+    <td><%= lesson.name %></td>
+    <td><%= lesson.description %></td>
+    </tr>
+  <% end %>
+<% end %>
+<%= paginate search_lessons, theme: "twitter-bootstrap-3" %>

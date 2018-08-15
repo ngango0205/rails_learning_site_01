@@ -19,8 +19,6 @@ class User < ApplicationRecord
   has_many :followers, through: :followed_relations, source: :follower
   has_many :likes
 
-  scope :search, ->(q){where "name LIKE '%#{q}%'"}
-
   class << self
     def new_with_session params, session
       super.tap do |user|

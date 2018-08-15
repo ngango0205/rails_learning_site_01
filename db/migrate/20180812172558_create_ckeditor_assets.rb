@@ -7,7 +7,7 @@ class CreateCkeditorAssets < ActiveRecord::Migration[5.2]
       t.string  :type, limit: 30
       t.integer :width
       t.integer :height
-       t.timestamps null: false
+      t.timestamps null: false
     end
      add_index :ckeditor_assets, :type
   end

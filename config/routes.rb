@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
-  get "/search", to: "lessons#search", as: "search"
   get "/notifications", to: "notifications#update_seen"
   get "/notifications/all", to: "notifications#index"
   get "/notifications/refresh_part", to: "notifications#refresh_part"
@@ -20,6 +19,9 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
+    collection do
+    match "search" => "users#search", via: [:get, :post], as: :search
+  end
   end
 
   resources :lessons do

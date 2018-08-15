@@ -93,22 +93,22 @@ en:
     mailer:
       confirmation_instructions:
         welcome: "Welcome"
-        can_confirm: "You can confirm your account email through the link 
+        can_confirm: "You can confirm your account email through the link
           below:"
       email_changed:
         hello: "Hello "
-        content_1: "We're contacting you to notify you that your email is 
+        content_1: "We're contacting you to notify you that your email is
           being changed to"
       password_change:
         hello: "Hello"
-        content_1: "We're contacting you to notify you that your password has 
+        content_1: "We're contacting you to notify you that your password has
           been changed."
       reset_password_instructions:
         hello: "Hello"
-        content_1: "Someone has requested a link to change your password. 
+        content_1: "Someone has requested a link to change your password.
           You can do this through the link below."
         content_2: "If you didn't request this, please ignore this email."
-        content_3: "Your password won't change until you access the link above 
+        content_3: "Your password won't change until you access the link above
           and create a new one."
     unlocks:
       new:
@@ -126,6 +126,10 @@ en:
       follow_submit: "Follow"
     unfollow:
       unfo_submit: "Unfollow"
+    search:
+      lessons: "Lessons"
+      users: "Users"
+      search_title: "Search"
   lessons:
     show:
       title: "Show lesson"

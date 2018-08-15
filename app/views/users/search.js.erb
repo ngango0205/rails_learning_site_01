@@ -1,0 +1,4 @@
+$("#search_users_result").html(
+  "<%= escape_javascript(render "users/search_users", search_users: @users) %>");
+$("#search_lessons_result").html(
+  "<%= escape_javascript(render "users/search_lessons", search_lessons: @users) %>");

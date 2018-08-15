@@ -2,8 +2,8 @@
   <div class="card z-depth-1 border-0">
     <div class="card-body">
       <div class="card-title">
-      <h1 class="page-header">Lessions
-          <small><%= t ".search_1" %></small>
+      <h1 class="page-header"><%= t".users" %>
+          <small><%= t".search_title" %></small>
         </h1>
       </div>
       <div class="card-body p-0">
@@ -14,28 +14,30 @@
               <td><h5><b><%= t ".description" %></b></h5></td>
             </tr>
           </thead>
-          <tbody  id="search_result">
-              <%= render "search_result", search_results: @search, search_name_results: @search_name %>
+          <tbody  id="search_users_result">
+            <%= render "search_users", search_users: @users %>
           </tbody>
         </table>
       </div>
     </div>
+  </div>
+  <div class="card z-depth-1 border-0">
     <div class="card-body">
       <div class="card-title">
-      <h1 class="page-header">Users
-          <small><%= t ".search_1" %></small>
+      <h1 class="page-header"><%= t".lessons" %>
+          <small><%= t".search_title" %></small>
         </h1>
       </div>
       <div class="card-body p-0">
         <table class="table table-responsive-md table-striped table-hover">
           <thead class="thead-light">
             <tr align="center">
-              <td><h5><b><%= t ".users" %></b></h5></td>
-              <td><h5><b><%= t ".id" %></b></h5></td>
+              <td><h5><b><%= t ".lessions" %></b></h5></td>
+              <td><h5><b><%= t ".description" %></b></h5></td>
             </tr>
           </thead>
-          <tbody id="search_name_result">
-              <%= render "search_name_result", search_name_results: @search_name %>
+          <tbody  id="search_lessons_result">
+            <%= render "search_lessons", search_lessons: @users %>
           </tbody>
         </table>
       </div>
