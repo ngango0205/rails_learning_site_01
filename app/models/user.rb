@@ -2,6 +2,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :confirmable,
     :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+  has_many :messages, dependent: :destroy
+  has_many :room_user_relation, foreign_key: :user_id
+  has_many :chat_rooms, through: :room_user_relation
   has_many :notifications, foreign_key: :recipient_id
   has_many :histories, dependent: :destroy
   has_many :comments, dependent: :destroy

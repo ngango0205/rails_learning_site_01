@@ -1,0 +1,35 @@
+<div class="popup-box" id="qnimate">
+  <div class="popup-head">
+    <div class="popup-head-left pull-left">
+      <%= gravatar_for user, size = Settings.image.big_size %> <%= user.name %>
+    </div>
+    <div class="popup-head-right pull-right">
+      <button id="close-chat-btn"
+        class="chat-header-button pull-right" type="button">
+        <i class="glyphicon glyphicon-off"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="popup-messages" id="messages" data-id="<%= room.id %>">
+    <%= render room.messages %>
+  </div>
+
+  <div class="popup-messages-footer">
+    <%= form_with url: "#", html: {id: "new-message"} do |f| %>
+      <%= f.text_area :content, id: "message-body" %>
+      <%= f.hidden_field :chat_room_id, value: room.id %>
+      <div class="btn-footer">
+        <button class="bg_none">
+          <i class="glyphicon glyphicon-camera"></i>
+        </button>
+        <button class="bg_none">
+          <i class="glyphicon glyphicon-paperclip"></i>
+        </button>
+        <button class="bg_none pull-right" id="btn_send_msg" type="submit">
+          <i class="glyphicon glyphicon-send"></i>
+        </button>
+      </div>
+    <% end %>
+  </div>
+</div>

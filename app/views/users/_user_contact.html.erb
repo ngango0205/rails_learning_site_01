@@ -1,0 +1,10 @@
+<li class="contact" data-id="<%= user.id %>">
+  <div class="wrap">
+    <span class="contact-status away"></span>
+    <%= gravatar_for user, size = Settings.image.big_size %>
+    <div class="meta">
+      <p class="name"><%= user.name %></p>
+      <p class="preview"></p>
+    </div>
+  </div>
+</li>
